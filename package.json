@@ -1,21 +1,19 @@
 {
-  "name": "project1",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "start": "node server.js"
-  },
-  "dependencies": {
-    "axios": "^1.10.0",
-    "bcrypt": "^6.0.0",
-    "body-parser": "^2.2.0",
-    "cors": "^2.8.5",
-    "dotenv": "^17.1.0",
-    "express": "^5.1.0",
-    "express-rate-limit": "^7.5.1",
-    "jsonwebtoken": "^9.0.2",
-    "mysql": "^2.18.1",
-    "mysql2": "^3.14.2",
-    "twilio": "^5.7.3"
-  }
+    "name": "project1-backend",
+    "version": "1.0.0",
+    "description": "Authentication System Backend",
+    "main": "backend/server.js",
+    "scripts": {
+        "start": "cd backend && npm start",
+        "install-backend": "cd backend && npm install",
+        "dev": "cd backend && npm start"
+    },
+    "keywords": [
+        "authentication",
+        "otp",
+        "mongodb",
+        "express"
+    ],
+    "author": "Your Name",
+    "license": "MIT"
 }
