@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="SDG Policy Platform - Collaborative authoring system for sustainable development policy documents"
+    />
+    <meta
+      name="keywords"
+      content="SDG, policy, collaboration, sustainable development, co-authoring"
+    />
+    <meta name="author" content="SDG Policy Organization" />
+
+    <title>SDG Policy Platform - Co-Author Access</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="./assets/images/logo.svg" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="platform-header">
+        <div class="logo">
+          <img src="./assets/images/logo.svg" alt="SDG Logo" class="logo-img" />
+        </div>
+        <h1>Policy Co-Author Portal</h1>
+        <p class="subtitle">
+          Collaborative platform for SDG policy development
+        </p>
+      </div>
+
+      <div class="platform-info">
+        <strong>🎯 Mission:</strong> Collaborative authoring of sustainable
+        development policy documents and research papers.
+      </div>
+
+      <div class="access-note">
+        <strong>Note:</strong> Co-author access is invitation-only. Please
+        ensure you have received authorization from your project coordinator.
+      </div>
+
+      <!-- Status Messages -->
+      <div class="success-message" id="successMessage">
+        Access granted! Redirecting to your workspace...
+      </div>
+
+      <div class="error-message" id="errorMessage">
+        Access denied. Please check your credentials or contact the project
+        coordinator.
+      </div>
+
+      <!-- Role Selection -->
+      <div class="role-selector">
+        <label class="role-label">Select your role:</label>
+        <div class="role-buttons">
+          <button
+            class="role-btn active"
+            onclick="selectRole(this, 'lead-author')"
+          >
+            📝 Lead Author
+          </button>
+          <button class="role-btn" onclick="selectRole(this, 'co-author')">
+            👥 Co-Author
+          </button>
+          <button class="role-btn" onclick="selectRole(this, 'reviewer')">
+            🔍 Reviewer
+          </button>
+          <button class="role-btn" onclick="selectRole(this, 'researcher')">
+            📊 Researcher
+          </button>
+        </div>
+      </div>
+
+      <!-- OAuth Authentication Methods -->
+      <div class="auth-methods">
+        <a
+          href="#"
+          class="auth-btn institutional"
+          onclick="handleInstitutionalLogin()"
+        >
+          <img
+            src="./assets/icons/institutional.svg"
+            alt="Institution"
+            class="auth-icon"
+          />
+          Institutional SSO Login
+        </a>
+
+        <a href="#" class="auth-btn google" onclick="handleOAuth('google')">
+          <img src="./assets/icons/google.svg" alt="Google" class="auth-icon" />
+          Continue with Google Workspace
+        </a>
+
+        <a
+          href="#"
+          class="auth-btn microsoft"
+          onclick="handleOAuth('microsoft')"
+        >
+          <img
+            src="./assets/icons/microsoft.svg"
+            alt="Microsoft"
+            class="auth-icon"
+          />
+          Continue with Microsoft 365
+        </a>
+      </div>
+
+      <div class="divider">or use authorized credentials</div>
+
+      <!-- Login Form -->
+      <form class="login-form" onsubmit="handleCredentialLogin(event)">
+        <div class="form-group">
+          <label class="form-label" for="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            class="form-input"
+            placeholder="your.email@organization.org"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            class="form-input"
+            placeholder="Enter your secure password"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="accessCode">Project Access Code</label>
+          <input
+            type="text"
+            id="accessCode"
+            class="form-input"
+            placeholder="Enter 6-digit project code"
+            maxlength="6"
+            required
+          />
+        </div>
+
+        <div class="remember-forgot">
+          <label class="remember-me">
+            <input type="checkbox" id="remember" />
+            <span>Remember me</span>
+          </label>
+          <a href="#" class="forgot-link" onclick="handleForgotPassword()"
+            >Forgot password?</a
+          >
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">
+          Access Co-Author Platform
+          <div class="loading" id="loginLoading">
+            <div class="spinner"></div>
+          </div>
+        </button>
+      </form>
+
+      <!-- Footer Information -->
+      <div class="footer-info">
+        <p>
+          <strong>Need access?</strong> Contact your project coordinator or
+          email <a href="mailto:access@sdgpolicy.org">access@sdgpolicy.org</a>
+        </p>
+        <p style="margin-top: 8px">
+          By signing in, you agree to our
+          <a href="#" onclick="showTerms()">Terms of Service</a> and
+          <a href="#" onclick="showPrivacy()">Privacy Policy</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>

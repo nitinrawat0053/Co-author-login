@@ -1,0 +1,80 @@
+{
+  "name": "sdg-coauthor-platform",
+  "version": "1.0.0",
+  "description": "Collaborative login system for SDG policy development and co-authoring",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Static site - no build process required'",
+    "deploy": "vercel --prod",
+    "lint:html": "echo 'HTML validation would go here'",
+    "lint:css": "echo 'CSS validation would go here'",
+    "lint:js": "echo 'JavaScript linting would go here'",
+    "test": "echo 'Tests would go here'",
+    "serve": "python -m http.server 8000 || python3 -m http.server 8000"
+  },
+  "keywords": [
+    "SDG",
+    "sustainable-development-goals",
+    "policy",
+    "collaboration",
+    "co-authoring",
+    "login",
+    "oauth",
+    "authentication",
+    "responsive-design",
+    "accessibility"
+  ],
+  "author": {
+    "name": "SDG Policy Team",
+    "email": "tech@sdgpolicy.org",
+    "url": "https://sdgpolicy.org"
+  },
+  "contributors": [
+    {
+      "name": "Your Name",
+      "role": "Frontend Developer - Intern",
+      "email": "intern@sdgpolicy.org"
+    }
+  ],
+  "license": "MIT",
+  "homepage": "https://sdg-coauthor-platform.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sdg-policy/coauthor-platform.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sdg-policy/coauthor-platform/issues",
+    "email": "support@sdgpolicy.org"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "devDependencies": {
+    "vercel": "^32.0.0"
+  },
+  "optionalDependencies": {},
+  "peerDependencies": {},
+  "funding": {
+    "type": "organization",
+    "url": "https://sdgpolicy.org/funding"
+  },
+  "config": {
+    "port": 8000,
+    "host": "localhost"
+  },
+  "private": false,
+  "files": [
+    "index.html",
+    "css/",
+    "js/",
+    "assets/",
+    "README.md"
+  ]
+}
