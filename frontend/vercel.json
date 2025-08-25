@@ -1,42 +1,20 @@
 {
-  "version": 2,
-  "name": "sdg-coauthor-platform",
-  "alias": ["sdg-policy-login", "coauthor-platform"],
-  "builds": [
+  "rewrites": [
     {
-      "src": "index.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "css/**/*",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "js/**/*",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "assets/**/*",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*\\.(css|js|svg|ico|png|jpg|jpeg|gif|webp|woff|woff2))",
-      "headers": {
-        "cache-control": "public, max-age=31536000, immutable"
-      }
-    },
-    {
-      "src": "/",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ],
   "headers": [
+    {
+      "source": "/(.*\\.(css|js|svg|ico|png|jpg|jpeg|gif|webp|woff|woff2))",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
     {
       "source": "/(.*)",
       "headers": [
@@ -61,15 +39,6 @@
           "value": "camera=(), microphone=(), geolocation=()"
         }
       ]
-    },
-    {
-      "source": "/assets/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
     }
   ],
   "redirects": [
@@ -83,21 +52,5 @@
       "destination": "/",
       "permanent": true
     }
-  ],
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "https://api.sdgpolicy.org/$1"
-    }
-  ],
-  "functions": {},
-  "regions": ["iad1", "cle1", "lhr1", "hnd1"],
-  "github": {
-    "enabled": false
-  },
-  "framework": null,
-  "outputDirectory": ".",
-  "installCommand": "echo 'No install needed for static site'",
-  "buildCommand": "echo 'No build needed for static site'",
-  "devCommand": "python -m http.server 3000 || python3 -m http.server 3000"
+  ]
 }
